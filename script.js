@@ -72,4 +72,16 @@ function filterDailyForecast(list) {
 function convertKelvinToCelsius(kelvin) {
     return (kelvin - 273.15).toFixed(2);
   }
+// Event handler for form submission
+$("#search-form").submit(function (event) {
+    event.preventDefault();
+    const city = $("#search-input").val().trim();
   
+    if (city !== "") {
+      // Fetch weather data for the entered city
+      getWeather(city);
+      // Add the city to the search history
+      addToHistory(city);
+    }
+  });
+    
