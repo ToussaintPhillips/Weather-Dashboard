@@ -65,3 +65,20 @@ body {
   .weather-header {
     background-color: #007bff;
   }
+  /* Responsive styling for small screens */
+@media (max-width: 767px) {
+    .form-input {
+      width: 100%;
+    }
+  
+    .search-button {
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    /* Adjust forecast card layout for small screens */
+    #forecastWeather {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
