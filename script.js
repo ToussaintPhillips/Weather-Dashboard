@@ -84,4 +84,43 @@ $("#search-form").submit(function (event) {
       addToHistory(city);
     }
   });
-    
+  // Event handler for clicking on a city in the search history
+$("#history").on("click", ".list-group-item", function () {
+  const city = $(this).text().trim();
+  // Fetch weather data for the selected city
+  getWeather(city);
+});
+
+// Function to add a city to the search history
+function addToHistory(city) {
+  const history = JSON.parse(localStorage.getItem("history")) || [];
+  // Add the city to the beginning of the history array
+  history.unshift(city);
+  // Keep the history array limited to the last 5 cities
+  const trimmedHistory = history.slice(0, 5);
+  // Save the updated history array to local storage
+  localStorage.setItem("history", JSON.stringify(trimmedHistory));
+  // Display the updated search history
+  displayHistory(trimmedHistory);
+}
+
+// Function to display the search history
+function displayHistory(history) {
+  $("#history").empty();
+  // Iterate through the history array and create list items for each city
+  history.forEach((city) => {
+    const historyItem = $("<li>").addClass("list-group-item");
+    historyItem.text(city);
+    $("#history").append(historyItem);
+  });
+}
+
+// Function to load the search history from local storage
+function loadHistory() {
+  const history = JSON.parse(localStorage.getItem("history")) || [];
+  // Display the search history
+  displayHistory(history);
+}
+
+// Load the search history when the page is loaded
+loadHistory();  
