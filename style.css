@@ -56,3 +56,12 @@ body {
     overflow-x: auto; /* Add this line to allow horizontal scrolling */
     justify-content: center; /* Center the cards horizontally */
   }
+  /* City history list styling */
+.list-group-item {
+    cursor: pointer;
+  }
+  
+  /* Header styles */
+  .weather-header {
+    background-color: #007bff;
+  }
