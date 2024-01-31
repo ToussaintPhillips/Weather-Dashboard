@@ -12,6 +12,9 @@ Welcome to the Weather Dashboard! This web application allows users to check the
 - [License](#license)
 - [Contact](#contact)
 
+![Weather Dashboard Screenshot](https://example.com/path/to/screenshot.png)
+
+
 ## Features 
 
 - **Current Weather:** Display real-time temperature, humidity, and wind speed for a chosen city.
