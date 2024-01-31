@@ -12,7 +12,7 @@ Welcome to the Weather Dashboard! This web application allows users to check the
 - [License](#license)
 - [Contact](#contact)
 
-## Features
+## Features 
 
 - **Current Weather:** Display real-time temperature, humidity, and wind speed for a chosen city.
 - **5-Day Forecast:** Provide a 5-day forecast with temperature, humidity, and wind speed details.
