@@ -38,4 +38,14 @@ body {
   .search-button {
     width: 100%;
   }
+  /* Forecast card styling with rounded edges */
+.weather-card {
+    background-color: #333; /* Dark grey background color */
+    color: #fff; /* White text color */
+    border: 1px solid #555; /* Dark border color */
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px; /* Add rounded corners */
+  }
   
