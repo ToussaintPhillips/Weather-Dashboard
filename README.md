@@ -25,7 +25,7 @@ Welcome to the Weather Dashboard! This web application allows users to check the
 
 ## Demo
 
-Check out the live demo [here](#).
+Check out the live demo [here](https://toussaintphillips.github.io/Weather-Dashboard/).
 
 ## Installation
 
