@@ -26,3 +26,17 @@ function displayWeather(data) {
   
     const forecastWeather = filterDailyForecast(data.list);
     $("#forecastWeather").empty();
+    // Display forecast cards
+  forecastWeather.forEach((forecast) => {
+    const forecastCard = $("<div>").addClass("weather-card");
+    // Add forecast information to the card
+    forecastCard.append(`<p>Date: ${dayjs(forecast.dt_txt).format("YYYY-MM-DD")}</p>`);
+    forecastCard.append(`<i class="wi wi-owm-${forecast.weather[0].id}"></i>`);
+    forecastCard.append(`<p>Temperature: ${convertKelvinToCelsius(forecast.main.temp)}°C</p>`);
+    forecastCard.append(`<p>Humidity: ${forecast.main.humidity}%</p>`);
+    forecastCard.append(`<p>Wind Speed: ${forecast.wind.speed} m/s</p>`);
+
+    $("#forecastWeather").append(forecastCard);
+  });
+}
+
