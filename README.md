@@ -5,7 +5,7 @@ Welcome to the Weather Dashboard! This web application allows users to check the
 ## Table of Contents
 
 - [Features](#features)
-- [Demo](#demo)
+- [Demo](https://toussaintphillips.github.io/Weather-Dashboard/))
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
