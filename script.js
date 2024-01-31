@@ -123,4 +123,4 @@ function loadHistory() {
 }
 
 // Load the search history when the page is loaded
-loadHistory();  
+loadHistory(); 
