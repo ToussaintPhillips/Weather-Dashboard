@@ -62,5 +62,4 @@ For any inquiries or feedback, you can reach out to me:
 
 ---
 
-**Note:** Replace the placeholders with your actual information and update the links accordingly.
-```
+
