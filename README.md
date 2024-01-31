@@ -54,7 +54,7 @@ This project is licensed under the [MIT License](LICENSE).
 For any inquiries or feedback, you can reach out to me:
 
 - GitHub: [ToussaintPhillips](https://github.com/ToussaintPhillips)
-- Email: [your.email@example.com](mailto:your.email@example.com)
+- Email: [your.email@example.com](toussaintphillips@gmail.com)
 
 ---
 
