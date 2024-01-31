@@ -12,7 +12,8 @@ Welcome to the Weather Dashboard! This web application allows users to check the
 - [License](#license)
 - [Contact](#contact)
 
-![assets/Weather Dashboard.png]
+![assets/Weather Dashboard.png](https://example.com/path/to/screenshot.png)
+
 
 
 ## Features 
