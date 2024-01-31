@@ -39,4 +39,32 @@ function displayWeather(data) {
     $("#forecastWeather").append(forecastCard);
   });
 }
+// Function to filter the 6-day forecast to one entry per day, including the current day
+function filterDailyForecast(list) {
+  const currentDate = dayjs().format("YYYY-MM-DD");
+  const uniqueDates = new Set();
+  const dailyForecast = [];
 
+  // Variable to track if the current day has been added to the forecast
+  let currentDayAdded = false;
+
+  // Iterate through the forecast entries
+  list.forEach((entry) => {
+    const date = dayjs(entry.dt_txt).format("YYYY-MM-DD");
+
+    // Add the current day only if it hasn't been added yet
+    if (!currentDayAdded && date === currentDate) {
+      dailyForecast.push(entry);
+      currentDayAdded = true;
+    }
+
+    // Add future dates starting from the next day
+    if (!uniqueDates.has(date) && date !== currentDate && dayjs(date).isAfter(currentDate)) {
+      dailyForecast.push(entry);
+      uniqueDates.add(date);
+    }
+  });
+
+  // Return the filtered forecast for the next 5 days
+  return dailyForecast.slice(1, 6);
+}
