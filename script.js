@@ -1,34 +1,45 @@
 // OpenWeatherMap API key
 const apiKey = "2a259694721562eb41fb0ee93caa7d37";
+
 // Function to get weather data based on city name
 async function getWeather(city) {
-    const queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
-  
-    try {
-      const response = await fetch(queryURL);
-  
-      if (!response.ok) {
-        throw new Error(`Error: ${response.status} - ${response.statusText}`);
-      }
-  
-      const data = await response.json();
-  // Function to display weather information
+  const queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
+
+  try {
+    const response = await fetch(queryURL);
+
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status} - ${response.statusText}`);
+    }
+
+    const data = await response.json();
+
+    // Call displayWeather function to render weather information
+    displayWeather(data);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+// Function to display weather information
 function displayWeather(data) {
-    const currentWeather = data.list[0];
-  
-    // Update HTML elements with current weather information
-    $("#cityName").text(data.city.name);
-    $("#currentDate").text(`Date: ${dayjs(currentWeather.dt_txt).format("YYYY-MM-DD HH:mm:ss")}`);
-    $("#weatherIcon").html(`<i class="wi wi-owm-${currentWeather.weather[0].id}"></i>`);
-    $("#temperature").text(`Temperature: ${convertKelvinToCelsius(currentWeather.main.temp)}°C`);
-    $("#humidity").text(`Humidity: ${currentWeather.main.humidity}%`);
-    $("#windSpeed").text(`Wind Speed: ${currentWeather.wind.speed} m/s`);
-  
-    const forecastWeather = filterDailyForecast(data.list);
-    $("#forecastWeather").empty();
-    // Display forecast cards
+  const currentWeather = data.list[0];
+
+  // Update HTML elements with current weather information
+  $("#cityName").text(data.city.name);
+  $("#currentDate").text(`Date: ${dayjs(currentWeather.dt_txt).format("YYYY-MM-DD HH:mm:ss")}`);
+  $("#weatherIcon").html(`<i class="wi wi-owm-${currentWeather.weather[0].id}"></i>`);
+  $("#temperature").text(`Temperature: ${convertKelvinToCelsius(currentWeather.main.temp)}°C`);
+  $("#humidity").text(`Humidity: ${currentWeather.main.humidity}%`);
+  $("#windSpeed").text(`Wind Speed: ${currentWeather.wind.speed} m/s`);
+
+  const forecastWeather = filterDailyForecast(data.list);
+  $("#forecastWeather").empty();
+
+  // Display forecast cards
   forecastWeather.forEach((forecast) => {
     const forecastCard = $("<div>").addClass("weather-card");
+
     // Add forecast information to the card
     forecastCard.append(`<p>Date: ${dayjs(forecast.dt_txt).format("YYYY-MM-DD")}</p>`);
     forecastCard.append(`<i class="wi wi-owm-${forecast.weather[0].id}"></i>`);
@@ -39,6 +50,7 @@ function displayWeather(data) {
     $("#forecastWeather").append(forecastCard);
   });
 }
+
 // Function to filter the 6-day forecast to one entry per day, including the current day
 function filterDailyForecast(list) {
   const currentDate = dayjs().format("YYYY-MM-DD");
@@ -68,23 +80,26 @@ function filterDailyForecast(list) {
   // Return the filtered forecast for the next 5 days
   return dailyForecast.slice(1, 6);
 }
+
 // Function to convert temperature from Kelvin to Celsius
 function convertKelvinToCelsius(kelvin) {
-    return (kelvin - 273.15).toFixed(2);
-  }
+  return (kelvin - 273.15).toFixed(2);
+}
+
 // Event handler for form submission
 $("#search-form").submit(function (event) {
-    event.preventDefault();
-    const city = $("#search-input").val().trim();
-  
-    if (city !== "") {
-      // Fetch weather data for the entered city
-      getWeather(city);
-      // Add the city to the search history
-      addToHistory(city);
-    }
-  });
-  // Event handler for clicking on a city in the search history
+  event.preventDefault();
+  const city = $("#search-input").val().trim();
+
+  if (city !== "") {
+    // Fetch weather data for the entered city
+    getWeather(city);
+    // Add the city to the search history
+    addToHistory(city);
+  }
+});
+
+// Event handler for clicking on a city in the search history
 $("#history").on("click", ".list-group-item", function () {
   const city = $(this).text().trim();
   // Fetch weather data for the selected city
@@ -123,4 +138,4 @@ function loadHistory() {
 }
 
 // Load the search history when the page is loaded
-loadHistory(); 
+loadHistory();

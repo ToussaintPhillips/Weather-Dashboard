@@ -22,63 +22,68 @@ button {
   padding: 0;
   border: 0;
 }
+
 body {
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.6;
-  }
-  
-  /* Weather Dashboard Styles */
-  
-  /* Form styles */
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Weather Dashboard Styles */
+
+/* Form styles */
+.form-input {
+  width: 70%;
+}
+
+/* Button styles */
+.search-button {
+  width: 100%;
+}
+
+/* Forecast card styling with rounded edges */
+.weather-card {
+  background-color: #333; /* Dark grey background color */
+  color: #fff; /* White text color */
+  border: 1px solid #555; /* Dark border color */
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 10px; /* Add rounded corners */
+}
+
+/* Display forecast cards in horizontal grid */
+#forecastWeather {
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap; /* Keep cards in a single row */
+  overflow-x: auto; /* Add this line to allow horizontal scrolling */
+  justify-content: center; /* Center the cards horizontally */
+}
+
+/* City history list styling */
+.list-group-item {
+  cursor: pointer;
+}
+
+/* Header styles */
+.weather-header {
+  background-color: #007bff;
+}
+
+/* Responsive styling for small screens */
+@media (max-width: 767px) {
   .form-input {
-    width: 70%;
-  }
-  
-  /* Button styles */
-  .search-button {
     width: 100%;
   }
-  /* Forecast card styling with rounded edges */
-.weather-card {
-    background-color: #333; /* Dark grey background color */
-    color: #fff; /* White text color */
-    border: 1px solid #555; /* Dark border color */
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-    border-radius: 10px; /* Add rounded corners */
+
+  .search-button {
+    width: 100%;
+    margin-top: 10px;
   }
-  /* Display forecast cards in horizontal grid */
-#forecastWeather {
-    display: flex;
-    gap: 20px;
-    flex-wrap: nowrap; /* Keep cards in a single row */
-    overflow-x: auto; /* Add this line to allow horizontal scrolling */
-    justify-content: center; /* Center the cards horizontally */
+
+  /* Adjust forecast card layout for small screens */
+  #forecastWeather {
+    flex-direction: column;
+    align-items: center;
   }
-  /* City history list styling */
-.list-group-item {
-    cursor: pointer;
-  }
-  
-  /* Header styles */
-  .weather-header {
-    background-color: #007bff;
-  }
-  /* Responsive styling for small screens */
-@media (max-width: 767px) {
-    .form-input {
-      width: 100%;
-    }
-  
-    .search-button {
-      width: 100%;
-      margin-top: 10px;
-    }
-  
-    /* Adjust forecast card layout for small screens */
-    #forecastWeather {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
+}
