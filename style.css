@@ -48,4 +48,11 @@ body {
     text-align: center;
     border-radius: 10px; /* Add rounded corners */
   }
-  
+  /* Display forecast cards in horizontal grid */
+#forecastWeather {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap; /* Keep cards in a single row */
+    overflow-x: auto; /* Add this line to allow horizontal scrolling */
+    justify-content: center; /* Center the cards horizontally */
+  }
