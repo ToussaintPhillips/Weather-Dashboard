@@ -22,3 +22,20 @@ button {
   padding: 0;
   border: 0;
 }
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Weather Dashboard Styles */
+  
+  /* Form styles */
+  .form-input {
+    width: 70%;
+  }
+  
+  /* Button styles */
+  .search-button {
+    width: 100%;
+  }
+  
