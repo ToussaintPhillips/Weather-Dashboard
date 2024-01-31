@@ -68,3 +68,8 @@ function filterDailyForecast(list) {
   // Return the filtered forecast for the next 5 days
   return dailyForecast.slice(1, 6);
 }
+// Function to convert temperature from Kelvin to Celsius
+function convertKelvinToCelsius(kelvin) {
+    return (kelvin - 273.15).toFixed(2);
+  }
+  
