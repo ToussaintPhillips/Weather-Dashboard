@@ -1,93 +1,65 @@
-Certainly! Here's your README.md with the content rewritten:
+# Weather Dashboard
 
-```markdown
-# EK's Food App 
+Welcome to the Weather Dashboard! This web application allows users to check the current weather and a 5-day forecast for a specified city. The application utilizes the OpenWeatherMap API to fetch weather data.
 
-Welcome to EK's Food App, a user-friendly front-end jQuery application designed to simplify the process of discovering quick and healthy recipes, complete with detailed nutritional information. Whether you're a busy professional or a health-conscious individual, this app is tailored to help you make informed decisions about your meals without sacrificing taste or nutrition.
+## Table of Contents
 
-## Features
+- [Features](#features)
+- [Demo](https://toussaintphillips.github.io/Weather-Dashboard/)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-- **Recipe of the Day:**
-  - Get greeted with a curated Recipe of the Day as soon as you enter the app.
-  - Option to regenerate the page for a refreshed recipe.
+![assets/Weather-Dashboard.png](Weather-Dashboard.png)
 
-- **Ingredient-Based Search:**
-  - Input a specific ingredient to find recipes containing the chosen element.
 
-- **Recipe Details and Nutritional Information:**
-  - Access detailed recipe instructions alongside comprehensive nutritional information.
-  - Enjoy an optimized layout for both desktop and mobile platforms for a seamless user experience.
 
-- **Create Shopping List:**
-  - Generate a shopping list for any chosen recipe, including essential ingredients required.
+## Features 
 
-## Screenshot
+- **Current Weather:** Display real-time temperature, humidity, and wind speed for a chosen city.
+- **5-Day Forecast:** Provide a 5-day forecast with temperature, humidity, and wind speed details.
+- **Color-Coded Cards:** Weather condition-based color-coding for easy interpretation.
+- **City History:** Keep a history of searched cities for quick access.
 
-- ![Screenshot](Assets/images/Screenshot.png)
-  
-## How to Use
+## Demo
 
-1. **Clone the Repository:**
+Check out the live demo [here](https://toussaintphillips.github.io/Weather-Dashboard/).
+
+## Installation
+
+To run the Weather Dashboard locally, follow these steps:
+
+1. Clone the repository:
+
    ```bash
-   git clone https://github.com/4True/eks-food-app.git
-   cd eks-food-app
+   git clone https://github.com/ToussaintPhillips/WeatherDashboard.git
    ```
 
-2. **Open the App:**
-   Open `index.html` in your preferred web browser.
+2. Open the index.html file in your web browser.
 
-3. **Explore Recipes:**
-   - Discover the Recipe of the Day or input a specific ingredient to find recipes.
-   - Click on any recipe to view detailed instructions and nutritional information.
+## Usage
 
-4. **Generate Shopping List:**
-   If satisfied with a recipe, click on "Create Shopping List" to generate a list of essential ingredients.
-
-## Technologies Used
-
-- HTML
-- CSS
-- jQuery
-- [Bootstrap 5](https://getbootstrap.com/)
-- **Front-end Frameworks:** Replace with specific frameworks or libraries (if used).
-- **Back-end API:**
-  - [Edamam API](https://developer.edamam.com/edamam-recipe-api)
-  - [Spoonacular API](https://spoonacular.com/food-api)
-
-## How to Set Up API Keys
-
-To use the Edamam and Spoonacular APIs, you'll need to obtain API keys. Follow the instructions on their respective websites to register and obtain the necessary keys.
-
-Create a file named `.env` in the project root and add your API keys:
-
-```plaintext
-# .env
-
-EDAMAM_API_KEY=your_edamam_api_key
-SPOONACULAR_API_KEY=your_spoonacular_api_key
-```
+1. Enter the name of the city you want to check the weather for in the search bar.
+2. Click the "Search" button.
+3. View the current weather and 5-day forecast.
 
 ## Contributing
 
-Contributions are welcome! If you have suggestions, feature requests, or find any issues, feel free to open an [issue](https://github.com/yourusername/eks-food-app/issues) or submit a [pull request](https://github.com/yourusername/eks-food-app/pulls).
-
-### Contributors
-
-- [Toussaint Phillips](https://github.com/ToussaintPhillips)
-- [Contributor 2](https://github.com/contributor2)
-- [Contributor 3](https://github.com/contributor3)
-- [Contributor 4](https://github.com/contributor4)
+Contributions are welcome! If you have any improvements or suggestions, feel free to open an issue or create a pull request.
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
 
-## Acknowledgments
+## Contact
 
-- Special thanks to [Spoonacular](https://spoonacular.com/) for providing example recipe data.
-- Special thanks to [Edamam](https://developer.edamam.com/edamam-recipe-api) and [Spoonacular](https://spoonacular.com/) for providing example recipe data.
-- Inspired by the need for a simple and healthy recipe discovery tool for users with busy lifestyles.
-```
+For any inquiries or feedback, you can reach out to me:
 
-Feel free to customize the placeholders (like `yourusername`, `your_edamam_api_key`, `your_spoonacular_api_key`, etc.) with actual values specific to your project.
+- GitHub: [ToussaintPhillips](https://github.com/ToussaintPhillips)
+- Email: [toussaintphillips@gmail.com](toussaintphillips@gmail.com)
+
+---
+
 
